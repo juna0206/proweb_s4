@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Nilai Mata Kuliah</title>
+    <link rel="stylesheet" type="text/css" href="lat2.css">
+</head>
+<body>
+    <h2>Konversi Nilai Mata Kuliah</h2>
+    <form method="post" action="">
+        <label for="nilai">Masukkan Nilai:</label>
+        <input type="text" id="nilai" name="nilai" required><br><br>
+        <input type="submit" value="Konversi">
+    </form>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nilai = $_POST["nilai"];
+
+        if ($nilai >= 80) {
+            echo "<h3>Nilai Anda: A</h3>";
+        } elseif ($nilai >= 70) {
+            echo "<h3>Nilai Anda: B</h3>";
+        } elseif ($nilai >= 60) {
+            echo "<h3>Nilai Anda: C</h3>";
+        } elseif ($nilai >= 50) {
+            echo "<h3>Nilai Anda: D</h3>";
+        } else {
+            echo "<h3>Nilai Anda: E</h3>";
+        }
+    }
+    ?>
+</body>
+</html>
